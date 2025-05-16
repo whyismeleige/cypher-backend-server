@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whyismeleige/cypher-backend-server.git"
+  },
+  "author": "Piyush Jain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whyismeleige/cypher-backend-server/issues"
+  },
+  "homepage": "https://github.com/whyismeleige/cypher-backend-server#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
