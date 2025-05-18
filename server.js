@@ -57,7 +57,6 @@ app.post("/claude",auth, async (req, res) => {
     );
     const claudeAnswer = response.data.content[0].text;
     const rating = findRating(claudeAnswer);
-    console.log(rating);
     await User.findByIdAndUpdate(
       req.user.userId,
       {
@@ -167,7 +166,6 @@ app.post("/login", (req, res) => {
 // User Ratings Endpoint
 app.get("/user/ratings",auth,async(req,res) => {
   try{
-    console.log('Fetching User Activity Data')
     const user = await User.findById(req.user.userId).select("ratings");
     if(!user) return res.status(404).json({message: "User not found"});
     res.status(200).json({ratings: user.ratings});
@@ -180,7 +178,6 @@ app.get("/user/ratings",auth,async(req,res) => {
 // User Queries Endpoint
 app.get("/user/queries",auth,async(req,res) => {
   try{
-    console.log('Fetching User Activity Data')
     const user = await User.findById(req.user.userId).select("queries");
     if(!user) return res.status(404).json({message: "User not found"});
     res.status(200).json({queries: user.queries});
@@ -201,6 +198,5 @@ app.get("/auth-endpoint", auth, (req, res) => {
   res.json({ message: "You are authorized to access me" });
 });
 
-app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
 
 module.exports = app;

@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
     };
     next();
   } catch (error) {
-    console.log("JWT verify error:", error.message);  // <-- This will tell you the exact problem
+    console.log("JWT verify error:", error.message); 
     res.status(401).json({
       error: new Error("Invalid Request!"),
     });
