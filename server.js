@@ -198,5 +198,6 @@ app.get("/auth-endpoint", auth, (req, res) => {
   res.json({ message: "You are authorized to access me" });
 });
 
+app.listen(PORT,() => console.log(`Server is running on PORT ${PORT}`));
 
 module.exports = app;
